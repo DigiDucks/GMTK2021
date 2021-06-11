@@ -78,4 +78,9 @@ public class PlayerMovement : MonoBehaviour
 
         _body.velocity = new Vector2(movement, _body.velocity.y);
     }
+
+    public int GetPlayerNumber()
+    {
+        return playerNumber;
+    }
 }
