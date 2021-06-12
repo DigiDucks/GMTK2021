@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool vert = false;
     bool jump = false;
+    [SerializeField]
     bool grounded = false;
 
     float movement = 0;
@@ -35,9 +36,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Read Inputs
-        vert = (Input.GetAxis("Vertical"+playerNumber)>0);
-        hor = Input.GetAxis("Horizontal" + playerNumber);
-        if (/*grounded &&*/ vert)
+        vert = (Input.GetAxisRaw("Vertical"+playerNumber)>0);
+        hor = Input.GetAxisRaw("Horizontal" + playerNumber);
+        if (grounded && vert)
         {
             jump = true;
         }
@@ -52,13 +53,22 @@ public class PlayerMovement : MonoBehaviour
         //Set a raycast to check whether or not on the ground
         Vector3 max = _col.bounds.max;
         Vector3 min = _col.bounds.min;
-        Vector2 corner1 = new Vector2(max.x, min.y - .1f);
-        Vector2 corner2 = new Vector2(min.x, min.y - .2f);
-        Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
+        Vector2 corner1 = new Vector2(max.x, min.y - .01f);
+        Vector2 corner2 = new Vector2(min.x, min.y - .02f);
+        Collider2D[] hit = Physics2D.OverlapAreaAll(corner1, corner2);
 
         if (hit != null)
         {
-            grounded = true;
+            foreach(Collider2D col in hit)
+            {
+           
+                if (!col.isTrigger && col.gameObject !=gameObject)
+                {
+                    Debug.Log(col);
+                    grounded = true;
+                    break;
+                }
+            }
         }
 
         if (hor < 0)
