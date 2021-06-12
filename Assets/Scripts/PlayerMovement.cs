@@ -53,8 +53,8 @@ public class PlayerMovement : MonoBehaviour
         //Set a raycast to check whether or not on the ground
         Vector3 max = _col.bounds.max;
         Vector3 min = _col.bounds.min;
-        Vector2 corner1 = new Vector2(max.x - .03f, min.y - .01f);
-        Vector2 corner2 = new Vector2(min.x + .03f, min.y - .01f);
+        Vector2 corner1 = new Vector2(max.x - .1f, min.y - .01f);
+        Vector2 corner2 = new Vector2(min.x + .1f, min.y - .01f);
         Collider2D[] hit = Physics2D.OverlapAreaAll(corner1, corner2);
 
         if (hit != null)
