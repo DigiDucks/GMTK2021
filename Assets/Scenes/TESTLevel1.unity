@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 75661329}
   m_Layer: 0
   m_Name: BaseMap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4037,6 +4037,18 @@ PrefabInstance:
     - target: {fileID: 4728020202817642512, guid: 60c16003a2cfcb049ad4b36ca869e16d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.6930964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728020202893878736, guid: 60c16003a2cfcb049ad4b36ca869e16d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728020202893878764, guid: 60c16003a2cfcb049ad4b36ca869e16d, type: 3}
+      propertyPath: aura_speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728020204560921384, guid: 60c16003a2cfcb049ad4b36ca869e16d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4728020204606557761, guid: 60c16003a2cfcb049ad4b36ca869e16d, type: 3}
       propertyPath: m_LocalPosition.x
