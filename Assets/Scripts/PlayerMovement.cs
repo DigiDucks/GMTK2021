@@ -32,11 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     float movement = 0;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         _body = GetComponent<Rigidbody2D>();
         _col = GetComponent<Collider2D>();
+
     }
 
     // Update is called once per frame

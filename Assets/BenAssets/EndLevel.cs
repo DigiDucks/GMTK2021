@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-
+    [SerializeField]
     PlayerMovement[] playerPos;
+
+    [SerializeField]
+    bool next_level = false;
 
     private void Start()
     {
@@ -13,14 +16,25 @@ public class EndLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float checkValue = Vector3.Distance(playerPos[0].transform.position, playerPos[1].transform.position);
-        Debug.Log(checkValue + " is the checkvalue");
-
-        //if over 5 then false
-        if (checkValue <= 5.0f)
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log ("the check triggered");
-            GameManager.instance.LoadNextLevel();
+
+            float checkValue = 0;
+            if(playerPos.Length >= 2)
+            {
+                checkValue = Vector3.Distance(playerPos[0].transform.position, playerPos[1].transform.position);
+                Debug.Log(checkValue + " is the checkvalue");
+            }
+
+            //if over 5 then false
+            if (checkValue <= 5.0f)
+            {
+                next_level = true;
+                Debug.Log ("the check triggered");
+                GameManager.instance.LoadNextLevel();
+            }
         }
+
+
     }
 }
