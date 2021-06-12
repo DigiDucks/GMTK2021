@@ -24,7 +24,6 @@ public class FREN_BRAIN : MonoBehaviour
 
     // controller variables
     float hor = 0;
-    bool vert = false;
     bool jump = false;
     [SerializeField]
     bool grounded = false;
