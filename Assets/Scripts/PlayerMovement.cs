@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //Read Inputs
         vert = (Input.GetAxis("Vertical"+playerNumber)>0);
         hor = Input.GetAxis("Horizontal" + playerNumber);
-        if (grounded && vert)
+        if (/*grounded &&*/ vert)
         {
             jump = true;
         }
