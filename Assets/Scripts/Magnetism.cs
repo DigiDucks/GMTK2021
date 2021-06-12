@@ -8,17 +8,21 @@ public class Magnetism : MonoBehaviour
     float magnetForce;
 
     PointEffector2D _effect;
-    int player;
+    PlayerMovement player;
+
+    float playerNumber;
+    
 
     private void Start()
     {
         _effect = GetComponent<PointEffector2D>();
-        player = GetComponentInParent<PlayerMovement>().GetPlayerNumber();
+        player = GetComponentInParent<PlayerMovement>();
+        playerNumber = player.GetPlayerNumber();
     }
 
     private void Update()
     {
-        if (Input.GetAxis("Vertical" + player) < 0)
+        if (Input.GetButton("Action" + playerNumber) && player.IsGrounded())
         {
             _effect.forceMagnitude = magnetForce;
 

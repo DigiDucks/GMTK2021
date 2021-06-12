@@ -12,9 +12,14 @@ public class PlayerMovement : MonoBehaviour
     int playerNumber = 1;
 
     [SerializeField]
-    float jumpForce = 30;
+    float jumpForce = 30f;
     [SerializeField]
     float moveSpeed = 10f;
+
+    [SerializeField]
+    float maxSpeed = 100f;
+    [SerializeField]
+    float minSpeed = -100f;
 
     float hor = 0;
 
@@ -22,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     [SerializeField]
     bool grounded = false;
+
+    bool trueGrounded = false;
 
     float movement = 0;
 
@@ -36,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Read Inputs
-        vert = (Input.GetAxisRaw("Vertical"+playerNumber)>0);
+        vert = (Input.GetButtonDown("Jump"+playerNumber));
         hor = Input.GetAxisRaw("Horizontal" + playerNumber);
         if (grounded && vert)
         {
@@ -49,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         //Set delta's waiting for input
         movement = 0;
         grounded = false;
+        trueGrounded = false;
 
         //Set a raycast to check whether or not on the ground
         Vector3 max = _col.bounds.max;
@@ -65,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Debug.Log(col);
                     grounded = true;
+                    if (col.CompareTag("Ground"))
+                        trueGrounded = true;
                     break;
                 }
             }
@@ -85,11 +95,17 @@ public class PlayerMovement : MonoBehaviour
             jump = false;
         }
 
-        _body.velocity = new Vector2(movement, _body.velocity.y);
+        _body.velocity = new Vector2(Mathf.Clamp(movement, minSpeed, maxSpeed), 
+            Mathf.Clamp(_body.velocity.y, minSpeed, maxSpeed));
     }
 
     public int GetPlayerNumber()
     {
         return playerNumber;
+    }
+
+    public bool IsGrounded()
+    {
+        return trueGrounded;
     }
 }
