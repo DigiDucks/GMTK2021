@@ -90,10 +90,12 @@ public class FREN_BRAIN : MonoBehaviour
             if(side < -3 && touching_left && grounded)
             {
                 jump = true;
+                hor = 0;
             }
             else if(side > 3 && touching_right && grounded)
             {
                 jump = true;
+                hor = 0;
             }
         }
     }
@@ -180,6 +182,6 @@ public class FREN_BRAIN : MonoBehaviour
             jump = false;
         }
 
-        _body.velocity = new Vector2(movement, _body.velocity.y);
+        _body.velocity = new Vector2(movement, Mathf.Clamp(_body.velocity.y, -40, 40));
     }
 }
