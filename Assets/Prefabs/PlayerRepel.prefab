@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magnetForce: 100
+  lightning: {fileID: 5717403858844639873, guid: 9ba7aab764ba5f74aac5c9cec70bc067, type: 3}
   aura_alpha: 0
   aura_speed: 1
 --- !u!1 &2144621871643610174

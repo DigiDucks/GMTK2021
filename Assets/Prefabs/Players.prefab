@@ -106,6 +106,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2085776539, guid: 4f7d1a1525995864fa743061ead4feb1, type: 3}
+      propertyPath: lightning
+      value: 
+      objectReference: {fileID: 5717403858844639873, guid: 2a1046c3977466344aa87f84e7e03492, type: 3}
+    - target: {fileID: 2085776539, guid: 4f7d1a1525995864fa743061ead4feb1, type: 3}
       propertyPath: aura_speed
       value: 3
       objectReference: {fileID: 0}
@@ -175,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 631890530, guid: 6351ccd56433ad0488d21afee32f8ee9, type: 3}
+      propertyPath: lightning
+      value: 
+      objectReference: {fileID: 5717403858844639873, guid: 9ba7aab764ba5f74aac5c9cec70bc067, type: 3}
     - target: {fileID: 631890530, guid: 6351ccd56433ad0488d21afee32f8ee9, type: 3}
       propertyPath: aura_speed
       value: 3
