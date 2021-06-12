@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magnetForce: 100
+  aura_alpha: 0
+  aura_speed: 1
 --- !u!1 &2144621871643610174
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,8 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 2
-  jumpForce: 5
+  jumpForce: 12
   moveSpeed: 10
+  maxSpeed: 100
+  minSpeed: -100
   grounded: 0
 --- !u!61 &4842100130771954680
 BoxCollider2D:
