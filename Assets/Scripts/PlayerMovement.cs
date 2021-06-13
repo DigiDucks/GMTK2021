@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D _body;
     Collider2D _col;
+    Animator _anim;
 
     [SerializeField]
     int playerNumber = 1;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _body = GetComponent<Rigidbody2D>();
         _col = GetComponent<Collider2D>();
+        _anim = GetComponentInChildren<Animator>();
 
     }
 
@@ -98,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
             jump = false;
         }
 
+        _anim.SetBool("IsJump", !grounded);
         _body.velocity = new Vector2(Mathf.Clamp(movement, minSpeed, maxSpeed), 
             Mathf.Clamp(_body.velocity.y, minSpeed, maxSpeed));
     }
