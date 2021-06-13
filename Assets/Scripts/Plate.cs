@@ -37,7 +37,7 @@ public class Plate : MonoBehaviour
         {
             foreach (Collider2D col in hit)
             {
-                if (col.CompareTag("Crate"))
+                if (col.CompareTag("Crate") || col.CompareTag("Player"))
                 {
                     if (!col.isTrigger && col.gameObject != gameObject)
                     {
