@@ -3727,7 +3727,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143507421}
-  m_Text: Player cant fit into 1 tall areas
+  m_Text: Player CAN fit into 1 tall areas
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4435,7 +4435,7 @@ Transform:
   m_Children:
   - {fileID: 75661326}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &1596062900
 Tilemap:
@@ -4589,6 +4589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b905ff76e1ed649a9a24232474d92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPos: []
+  next_level: 0
 --- !u!212 &1800946113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4652,7 +4654,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1812603443
 PrefabInstance:
