@@ -7239,7 +7239,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360706506}
-  m_Text: Dont Get The Crate Stuck
+  m_Text: 'Dont Get The Crate Stuck
+
+    You Can Press R To Reset'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
