@@ -37,12 +37,15 @@ public class Plate : MonoBehaviour
         {
             foreach (Collider2D col in hit)
             {
-
-                if (!col.isTrigger && col.gameObject != gameObject)
+                if (col.CompareTag("Crate"))
                 {
-                    plate_on = true;
-                    break;
+                    if (!col.isTrigger && col.gameObject != gameObject)
+                    {
+                        plate_on = true;
+                        break;
+                    }
                 }
+
             }
         }
     }

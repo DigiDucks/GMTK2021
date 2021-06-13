@@ -101,6 +101,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: de279d1f5692c1342bdae2bf32b8edeb, type: 2}
+    - target: {fileID: 436270779, guid: 4f7d1a1525995864fa743061ead4feb1, type: 3}
+      propertyPath: m_GravityScale
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2085776535, guid: 4f7d1a1525995864fa743061ead4feb1, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -195,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: de279d1f5692c1342bdae2bf32b8edeb, type: 2}
+    - target: {fileID: 1228267452, guid: 6351ccd56433ad0488d21afee32f8ee9, type: 3}
+      propertyPath: m_GravityScale
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2144621871643610172, guid: 6351ccd56433ad0488d21afee32f8ee9, type: 3}
       propertyPath: m_RootOrder
       value: 1
