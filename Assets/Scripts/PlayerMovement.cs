@@ -72,9 +72,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit != null)
         {
-            foreach(Collider2D col in hit)
+            foreach (Collider2D col in hit)
             {
-                if (!col.isTrigger && col.gameObject !=gameObject )
+                if (!col.isTrigger && col.gameObject != gameObject 
+                    && col.gameObject.layer != 7 && col.gameObject.layer != 8)
                 {
                     Debug.Log(col);
                     grounded = true;
